@@ -33,15 +33,15 @@ export default class Cl_mAspirante{
         cedula,
         nota51,
         nota52,
-        nota54,
-        nota512,
         nota53,
-        nota514,
+        nota54,
         nota511,
-        nota516,
+        nota512,
         nota513,
-        nota517,
+        nota514,
         nota515,
+        nota516,
+        nota517,
   }: {
     nombre:string;
     cedula:string;
