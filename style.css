@@ -1,14 +1,11 @@
-/* style.css - Minimalista y cómodo */
-
-/* Variables para personalizar rápido */
 :root{
-  --bg: #f6f7f9;           /* fondo principal */
-  --card: #ffffff;         /* fondo de secciones/inputs */
-  --muted: #6b7280;        /* texto secundario */
-  --text: #0f172a;         /* texto principal */
-  --accent: #2563eb;       /* color de botones / acentos */
-  --danger: #ef4444;       /* color de eliminar/cancelar */
-  --radius: 10px;         /* radios suaves */
+  --bg: #f6f7f9;         
+  --card: #ffffff;         
+  --muted: #6b7280;        
+  --text: #0f172a;         
+  --accent: #2563eb;       
+  --danger: #ef4444;       
+  --radius: 10px;         
   --shadow: 0 6px 18px rgba(16,24,40,0.06);
   --glass: rgba(255,255,255,0.6);
   --gap: 14px;
@@ -16,7 +13,6 @@
   --font-sans: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
 }
 
-/* Reset muy ligero */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -28,19 +24,16 @@ body{
   -moz-osx-font-smoothing:grayscale;
   line-height:1.35;
   display:flex;
-  /* Apilar elementos verticalmente para evitar que h2 y secciones queden en columnas */
   flex-direction: column;
   justify-content:flex-start;
   padding:36px 18px;
 }
 
-/* Contenedor principal centrado y con límite de ancho */
 body > *{
   width:100%;
   max-width:var(--max-width);
 }
 
-/* Encabezado */
 h2{
   margin:0 0 18px 0;
   font-size:1.5rem;
@@ -48,7 +41,6 @@ h2{
   letter-spacing: -0.01em;
 }
 
-/* Secciones estilo tarjeta */
 section{
   background:linear-gradient(180deg, var(--card), rgba(255,255,255,0.98));
   border-radius:var(--radius);
@@ -57,7 +49,6 @@ section{
   margin-bottom:var(--gap);
 }
 
-/* Formularios: layout simple y cómodo */
 label{
   display:flex;
   flex-direction:column;
@@ -67,7 +58,6 @@ label{
   margin-bottom:12px;
 }
 
-/* Inputs y controles */
 input[type="text"],
 input[type="number"],
 textarea,
@@ -82,14 +72,12 @@ select{
   transition:box-shadow .12s ease, border-color .12s ease, transform .06s ease;
 }
 
-/* foco accesible */
 input:focus, textarea:focus, select:focus{
   box-shadow:0 6px 18px rgba(37,99,235,0.12);
   border-color:var(--accent);
   transform:translateY(-1px);
 }
 
-/* Botones: simple, grande y táctil */
 button{
   border:0;
   background:var(--accent);
@@ -102,7 +90,6 @@ button{
   transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
 }
 
-/* botones secundarios */
 button[aria-pressed="true"],
 button.secondary{
   background:transparent;
@@ -111,7 +98,6 @@ button.secondary{
   box-shadow:none;
 }
 
-/* botones de cancelar / eliminar */
 button.delete{
   background:transparent;
   color:var(--danger);
@@ -119,18 +105,14 @@ button.delete{
   box-shadow:none;
 }
 
-/* efecto al presionar */
 button:active{ transform:translateY(1px) scale(.998) }
 button:focus{ outline:3px solid rgba(37,99,235,0.12); outline-offset:3px }
-
-/* Layout de botones dentro de formularios */
 section > div{
   display:flex;
   gap:10px;
   margin-top:8px;
 }
 
-/* Tabla muy simple para la lista de aspirantes */
 table{
   width:100%;
   border-collapse:collapse;
@@ -146,7 +128,6 @@ td{
   padding:8px 0;
 }
 
-/* Botones pequeños en la fila */
 #aspirantes button{
   padding:6px 9px;
   font-size:0.95rem;
@@ -163,18 +144,15 @@ td{
   font-size:1.2rem;
 }
 
-/* Pequeños iconos de confirmar/cancelar en el form */
 #formCO5_btAceptar{ background: #10b981; box-shadow: 0 6px 12px rgba(16,185,129,0.12) }
 #formCO5_btCancelar{ background:transparent; color:var(--danger); border:1px solid rgba(239,68,68,0.08) }
 
-/* Estado hidden: cuando se muestre será tipo modal simple */
 #formCO5[hidden]{ display:none; }
 #formCO5.visible{
   position:relative;
   z-index:5;
 }
 
-/* Responsive: reducir paddings en pantallas pequeñas */
 @media (max-width:520px){
   body{ padding:20px 12px; }
   section{ padding:14px; }
@@ -182,16 +160,10 @@ td{
   input[type="text"], input[type="number"]{ font-size:0.95rem; padding:9px 10px; }
 }
 
-/* Toques finales: inputs numéricos con ancho cómodo */
 input[type="number"]{ max-width:160px }
 
-/* Compatibilidad para la lista de aspirantes (tabla o filas en div)
-   - Soporta rendering que inserte <tr> dentro de #aspirantes_divAspirantes
-   - Soporta también filas generadas como .aspirante-row (divs)
-*/
 #aspirantes_divAspirantes{ display:block; }
 
-/* Si la vista usa filas tipo div */
 .aspirante-row{
   display:flex;
   align-items:center;
@@ -202,14 +174,10 @@ input[type="number"]{ max-width:160px }
 }
 .aspirante-row .cedula{ font-weight:600; color:var(--text); }
 
-/* Si la vista usa tabla (<tr>/<td>), dar estilo cómodo a las celdas */
 #aspirantes_divAspirantes tr{ border-bottom:1px solid rgba(16,24,40,0.03); }
 #aspirantes_divAspirantes td{ padding:10px 6px; }
-
-/* Asegurar botones en la lista con espaciado y tamaño consistente */
 #aspirantes_divAspirantes button, .aspirante-row button{ margin-left:8px; padding:6px 9px; }
 
-/* Small utility classes you might use */
 .row{ display:flex; gap:12px; align-items:center; }
 .col{ display:flex; flex-direction:column; gap:8px; }
 .small{ font-size:0.85rem; color:var(--muted) }

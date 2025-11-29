@@ -3,10 +3,8 @@ export default class Cl_mConcurso {
     aspirantes = [];
     constructor() { }
     procesarAspirante(datos) {
-        // Buscamos si ya existe por cédula
         let existe = this.aspirantes.find(a => a.cedula === datos.cedula);
         if (existe) {
-            // MODO EDICIÓN: Actualizamos los datos del objeto existente
             existe.nombre = datos.nombre;
             existe.nota51 = datos.nota51;
             existe.nota52 = datos.nota52;
@@ -21,7 +19,6 @@ export default class Cl_mConcurso {
             existe.nota517 = datos.nota517;
         }
         else {
-            // MODO AGREGAR: Creamos uno nuevo
             this.aspirantes.push(new Cl_mAspirante(datos));
         }
         return true;

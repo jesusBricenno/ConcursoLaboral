@@ -14,10 +14,9 @@ export default class Cl_controlador {
         this.vAspirante = vAspirante;
     }
 
-    // Lógica para guardar (Crear o Editar)
     public guardarAspirante(datos: iAspirante) {
         this.modelo.procesarAspirante(datos);
-        this.mostrarVista("lista"); // Volver a la lista
+        this.mostrarVista("lista");
     }
 
     public eliminarAspirante(cedula: string) {
@@ -30,25 +29,22 @@ export default class Cl_controlador {
     public editarAspirante(cedula: string) {
         let aspirante = this.modelo.getAspirante(cedula);
         if (aspirante) {
-            // Cargamos los datos en el formulario y cambiamos de vista
             this.vAspirante.cargarDatos(aspirante);
             this.mostrarVista("form");
         }
     }
 
-    // Gestión de Vistas
     public mostrarVista(vista: "lista" | "form") {
         if (vista === "lista") {
             this.vAspirante.ocultar();
             this.vConcurso.mostrar();
-            this.vConcurso.refrescarTabla(); // Recargar datos de la tabla
+            this.vConcurso.refrescarTabla();
         } else {
             this.vConcurso.ocultar();
             this.vAspirante.mostrar();
         }
     }
-    
-    // Getter para que la vista de tabla acceda a los datos
+
     get aspirantes() {
         return this.modelo.dtAspirantes;
     }

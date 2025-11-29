@@ -1,12 +1,10 @@
 import Cl_vGeneral from "./tools/Cl_vGeneral.js";
 export default class Cl_vConcurso extends Cl_vGeneral {
-    divAspirantes; // Es el tbody
+    divAspirantes;
     btAgregar;
     constructor() {
         super({ formName: "aspirantes" });
-        // Enlazamos con el tbody del HTML restaurado
         this.divAspirantes = this.crearHTMLElement("divAspirantes");
-        // Enlazamos el botón +
         this.btAgregar = this.crearHTMLButtonElement("btAgg", {
             onclick: () => this.controlador?.mostrarVista("form")
         });
@@ -14,11 +12,8 @@ export default class Cl_vConcurso extends Cl_vGeneral {
     refrescarTabla() {
         if (!this.controlador)
             return;
-        // Limpiamos el tbody
         this.divAspirantes.innerHTML = "";
-        // Obtenemos los datos del controlador
         let aspirantes = this.controlador.aspirantes;
-        // Generamos las filas
         aspirantes.forEach((asp, index) => {
             let fila = `
             <tr>
@@ -32,7 +27,6 @@ export default class Cl_vConcurso extends Cl_vGeneral {
             </tr>`;
             this.divAspirantes.innerHTML += fila;
         });
-        // Asignamos eventos a los botones generados
         aspirantes.forEach((asp, index) => {
             let btEditar = document.getElementById(`aspirantes_btEditar_${index}`);
             let btEliminar = document.getElementById(`aspirantes_btEliminar_${index}`);
@@ -44,7 +38,7 @@ export default class Cl_vConcurso extends Cl_vGeneral {
     }
     mostrar() {
         this.vista.hidden = false;
-        this.refrescarTabla(); // Actualizamos la tabla al mostrar la vista
+        this.refrescarTabla();
     }
     ocultar() {
         this.vista.hidden = true;

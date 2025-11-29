@@ -8,10 +8,8 @@ export default class Cl_index {
         let vConcurso = new Cl_vConcurso();
         let vAspirante = new Cl_vAspirante();
         let controlador = new Cl_controlador(modelo, vConcurso, vAspirante);
-        // Inyectar controlador en vistas
         vConcurso.controlador = controlador;
         vAspirante.controlador = controlador;
-        // Iniciar
         controlador.mostrarVista("lista");
     }
 }

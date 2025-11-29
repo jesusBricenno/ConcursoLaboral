@@ -39,7 +39,7 @@ export default class Cl_vAspirante extends Cl_vGeneral {
     }
     cargarDatos(aspirante) {
         this.inCedula.value = aspirante.cedula;
-        this.inCedula.disabled = true; // Bloqueamos la cédula al editar
+        this.inCedula.disabled = true;
         this.inNombre.value = aspirante.nombre;
         this.inNota51.value = String(aspirante.nota51);
         this.inNota52.value = String(aspirante.nota52);

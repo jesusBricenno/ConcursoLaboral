@@ -39,7 +39,6 @@ export default class Cl_mAspirante {
     calcTotalF5() {
         return this.nota51 + this.nota52 + this.nota53 + this.nota54;
     }
-    // Método para exportar datos planos
     toJSON() {
         return {
             nombre: this.nombre, cedula: this.cedula,
