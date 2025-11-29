@@ -19,7 +19,8 @@ export default class Cl_vConcurso extends Cl_vGeneral {
             <tr>
                 <td>${asp.nombre}</td>
                 <td>${asp.cedula}</td>
-                <td>${asp.calcTotalF5()}</td>
+                <td>${asp.notaFormato5()}</td>
+                <td>${asp.notaFormato51()}</td>
                 <td>
                     <button id="aspirantes_btEditar_${index}" title="Editar F5">F5</button>
                     <button id="aspirantes_btEliminar_${index}" title="Eliminar" style="color:red;">X</button>
