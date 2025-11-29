@@ -1,49 +1,55 @@
 <!DOCTYPE html>
-<html lang="en-ve">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Concurso Laboral(0.1)</title>
+    <title>Concurso Laboral</title>
 </head>
 <body>
     <h2>Concurso Laboral</h2>
-    <section id="formCO5">
-        <h3>F5</h3>
-        <label>Nota51: <input id="formCO5_inCO51" type="number" placeholder="123"></label><br>
-        <label>Nota52: <input id="formCO5_inCO52" type="number" placeholder="123"></label><br>
-        <label>Nota53: <input id="formCO5_inCO53" type="number" placeholder="123"></label><br>
-        <label>Nota54: <input id="formCO5_inCO54" type="number" placeholder="123"></label><br>
-        <div>
-            <button id="formCO5_btAceptar">&#10003;</button>
-            <button id="formCO5_btCancelar">&#10005;</button>
-        </div>
-    </section>
-    <section id="formCO51">
-        <h3>F51</h3>
-        <label>Nota51: <input id="formCO5_inCO511" type="number" placeholder="123"></label><br>
-        <label>Nota52: <input id="formCO5_inCO512" type="number" placeholder="123"></label><br>
-        <label>Nota53: <input id="formCO5_inCO513" type="number" placeholder="123"></label><br>
-        <label>Nota54: <input id="formCO5_inCO514" type="number" placeholder="123"></label><br>
-        <label>Nota55: <input id="formCO5_inCO515" type="number" placeholder="123"></label><br>
-        <label>Nota56: <input id="formCO5_inCO516" type="number" placeholder="123"></label><br>
-        <label>Nota57: <input id="formCO5_inCO517" type="number" placeholder="123"></label><br>
-        <div>
-            <button id="formCO51_btAceptar">&#10003;</button>
-            <button id="formCO51_btCancelar">&#10005;</button>
-        </div>
-    </section>
+    
     <section id="aspirantes">
         <h3>Aspirantes</h3>
-        <table>
-            <tbody id="aspirantes_Tdata">
-                <tr>
-                    <th>Aspirante</th>
-                    <td><button id="aspirantes_btAgg">&#43;</button><button id="aspirantes_btBrr">&#45;</button></td>
-                </tr>
-            </tbody>
-        </table>
+        <div style="margin-bottom: 10px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:150px">Nombre</th>
+                    </tr>
+                </thead>
+                <tbody id="aspirantes_divAspirantes"></tbody>
+            </table>
+        </div>
+        <button id="aspirantes_btAgg" style="font-size: 1.2rem;">&#43;</button> 
     </section>
+
+    <section id="formCO5" hidden>
+        <h3>Ficha F5</h3>
+        <label>Nombre: <input id="formCO5_inNombre" type="text" placeholder="Nombre"></label><br>
+        <label>Cédula: <input id="formCO5_inCedula" type="text" placeholder="Cédula"></label><br>
+        
+        <h4>Evaluación F5</h4>
+        <label>Nota 5.1: <input id="formCO5_inNota51" type="number"></label><br>
+        <label>Nota 5.2: <input id="formCO5_inNota52" type="number"></label><br>
+        <label>Nota 5.3: <input id="formCO5_inNota53" type="number"></label><br>
+        <label>Nota 5.4: <input id="formCO5_inNota54" type="number"></label><br>
+
+        <h4>Detalles F5.1</h4>
+        <label>Nota 5.1.1: <input id="formCO5_inNota511" type="number"></label><br>
+        <label>Nota 5.1.2: <input id="formCO5_inNota512" type="number"></label><br>
+        <label>Nota 5.1.3: <input id="formCO5_inNota513" type="number"></label><br>
+        <label>Nota 5.1.4: <input id="formCO5_inNota514" type="number"></label><br>
+        <label>Nota 5.1.5: <input id="formCO5_inNota515" type="number"></label><br>
+        <label>Nota 5.1.6: <input id="formCO5_inNota516" type="number"></label><br>
+        <label>Nota 5.1.7: <input id="formCO5_inNota517" type="number"></label><br>
+
+        <div style="margin-top: 15px;">
+            <button id="formCO5_btAceptar">&#10003;</button>
+            <button id="formCO5_btCancelar" class="delete">&#10005;</button>
+        </div>
+    </section>
+
     <script type="module">
         import Cl_index from "./dist/Cl_index.js";
         new Cl_index();

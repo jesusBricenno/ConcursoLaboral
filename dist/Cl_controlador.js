@@ -1,33 +1,24 @@
-import Cl_mConcurso from "./Cl_mConcurso.js";
-import Cl_vConcurso from "./Cl_vConcurso.js";
-import Cl_vAspirante from "./Cl_vAspirante.js";
-import { iAspirante } from "./Cl_mAspirante.js";
-
 export default class Cl_controlador {
-    private modelo: Cl_mConcurso;
-    private vConcurso: Cl_vConcurso;
-    private vAspirante: Cl_vAspirante;
-
-    constructor(modelo: Cl_mConcurso, vConcurso: Cl_vConcurso, vAspirante: Cl_vAspirante) {
+    modelo;
+    vConcurso;
+    vAspirante;
+    constructor(modelo, vConcurso, vAspirante) {
         this.modelo = modelo;
         this.vConcurso = vConcurso;
         this.vAspirante = vAspirante;
     }
-
     // Lógica para guardar (Crear o Editar)
-    public guardarAspirante(datos: iAspirante) {
+    guardarAspirante(datos) {
         this.modelo.procesarAspirante(datos);
         this.mostrarVista("lista"); // Volver a la lista
     }
-
-    public eliminarAspirante(cedula: string) {
-        if(confirm(`¿Eliminar a ${cedula}?`)){
+    eliminarAspirante(cedula) {
+        if (confirm(`¿Eliminar a ${cedula}?`)) {
             this.modelo.eliminarAspirante(cedula);
             this.vConcurso.refrescarTabla();
         }
     }
-
-    public editarAspirante(cedula: string) {
+    editarAspirante(cedula) {
         let aspirante = this.modelo.getAspirante(cedula);
         if (aspirante) {
             // Cargamos los datos en el formulario y cambiamos de vista
@@ -35,19 +26,18 @@ export default class Cl_controlador {
             this.mostrarVista("form");
         }
     }
-
     // Gestión de Vistas
-    public mostrarVista(vista: "lista" | "form") {
+    mostrarVista(vista) {
         if (vista === "lista") {
             this.vAspirante.ocultar();
             this.vConcurso.mostrar();
             this.vConcurso.refrescarTabla(); // Recargar datos de la tabla
-        } else {
+        }
+        else {
             this.vConcurso.ocultar();
             this.vAspirante.mostrar();
         }
     }
-    
     // Getter para que la vista de tabla acceda a los datos
     get aspirantes() {
         return this.modelo.dtAspirantes;
