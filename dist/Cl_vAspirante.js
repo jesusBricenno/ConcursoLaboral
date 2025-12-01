@@ -13,8 +13,8 @@ export default class Cl_vAspirante extends Cl_vGeneral {
     inNota515;
     inNota516;
     inNota517;
-    btAceptar;
-    btCancelar;
+    btVolver;
+    //private btCancelar: HTMLButtonElement;
     constructor() {
         super({ formName: "formCO5" });
         this.inNombre = this.crearHTMLInputElement("inNombre");
@@ -30,12 +30,12 @@ export default class Cl_vAspirante extends Cl_vGeneral {
         this.inNota515 = this.crearHTMLInputElement("inNota515");
         this.inNota516 = this.crearHTMLInputElement("inNota516");
         this.inNota517 = this.crearHTMLInputElement("inNota517");
-        this.btAceptar = this.crearHTMLButtonElement("btAceptar", {
-            onclick: () => this.aceptar()
+        this.btVolver = this.crearHTMLButtonElement("btVolver", {
+            onclick: () => this.volver()
         });
-        this.btCancelar = this.crearHTMLButtonElement("btCancelar", {
-            onclick: () => this.cancelar()
-        });
+        /*   this.btCancelar = this.crearHTMLButtonElement("btCancelar", {
+               onclick: () => this.cancelar()
+           });*/
     }
     cargarDatos(aspirante) {
         this.inCedula.value = aspirante.cedula;
@@ -69,11 +69,11 @@ export default class Cl_vAspirante extends Cl_vGeneral {
         this.inNota516.value = "";
         this.inNota517.value = "";
     }
-    cancelar() {
+    /*private cancelar() {
         this.limpiar();
         this.controlador?.mostrarVista("lista");
-    }
-    aceptar() {
+    }*/
+    volver() {
         if (!this.inCedula.value) {
             alert("La cédula es obligatoria");
             return;
