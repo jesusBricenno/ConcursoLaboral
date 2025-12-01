@@ -148,8 +148,8 @@ td{
   font-size:1.2rem;
 }
 
-#formCO5_btAceptar{ background: #10b981; box-shadow: 0 6px 12px rgba(16,185,129,0.12) }
-#formCO5_btCancelar{ background:transparent; color:var(--danger); border:1px solid rgba(239,68,68,0.08) }
+#formCO5_btVolver{ background: #10b981; box-shadow: 0 6px 12px rgba(16,185,129,0.12) }
+/*#formCO5_btCancelar{ background:transparent; color:var(--danger); border:1px solid rgba(239,68,68,0.08) }*/
 
 #formCO5[hidden]{ display:none; }
 #formCO5.visible{
