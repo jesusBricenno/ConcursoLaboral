@@ -40,25 +40,25 @@ export default class Cl_mAspirante {
         return this._cedula;
     }
     set nota51(nt51) {
-        this._nota51 = nt51 > 0 && nt51 <= 25 ? nt51 : 0;
+        this._nota51 = nt51 > 0 || nt51 <= 25 ? nt51 : 0;
     }
     get nota51() {
         return this._nota51;
     }
     set nota52(nt52) {
-        this._nota52 = nt52 > 0 && nt52 <= 20 ? nt52 : 0;
+        this._nota52 = nt52 > 0 || nt52 <= 20 ? nt52 : 0;
     }
     get nota52() {
         return this._nota52;
     }
     set nota53(nt53) {
-        this._nota53 = nt53 > 0 && nt53 <= 6 ? nt53 : 0;
+        this._nota53 = nt53 > 0 || nt53 <= 6 ? nt53 : 0;
     }
     get nota53() {
         return this._nota53;
     }
     set nota54(nt54) {
-        this._nota51 = nt54 > 0 && nt54 <= 5 ? nt54 : 0;
+        this._nota51 = nt54 > 0 || nt54 <= 5 ? nt54 : 0;
     }
     get nota54() {
         return this._nota54;

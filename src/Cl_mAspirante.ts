@@ -1,17 +1,17 @@
 export interface iAspirante{
     nombre:string;
     cedula:string;
-    nota51:number;
-    nota52:number;
-    nota53:number;
-    nota54:number;
-    nota511:number;
-    nota512:number;
-    nota513:number;
-    nota514:number;
-    nota515:number;
-    nota516:number;
-    nota517:number;
+    nota51?:number;
+    nota52?:number;
+    nota53?:number;
+    nota54?:number;
+    nota511?:number;
+    nota512?:number;
+    nota513?:number;
+    nota514?:number;
+    nota515?:number;
+    nota516?:number;
+    nota517?:number;
 }
 
 export default class Cl_mAspirante{
@@ -85,25 +85,25 @@ export default class Cl_mAspirante{
         return this._cedula;
     }
     set nota51(nt51: number){
-        this._nota51 = nt51 > 0 && nt51 <= 25 ? nt51 : 0;
+        this._nota51 = nt51 > 0 || nt51 <= 25 ? nt51 : 0;
     }
     get nota51(): number {
         return this._nota51;
     }
     set nota52(nt52: number){
-        this._nota52 = nt52 > 0 && nt52 <= 20 ? nt52 : 0;
+        this._nota52 = nt52 > 0 || nt52 <= 20 ? nt52 : 0;
     }
     get nota52(): number {
         return this._nota52;
     }
     set nota53(nt53: number){
-        this._nota53 = nt53 > 0 && nt53 <= 6 ? nt53 : 0;
+        this._nota53 = nt53 > 0 || nt53 <= 6 ? nt53 : 0;
     }
     get nota53(): number {
         return this._nota53;
     }
     set nota54(nt54: number){
-        this._nota51 = nt54 > 0 && nt54 <= 5 ? nt54 : 0;
+        this._nota51 = nt54 > 0 || nt54 <= 5 ? nt54 : 0;
     }
     get nota54(): number {
         return this._nota54;

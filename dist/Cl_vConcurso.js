@@ -6,40 +6,66 @@ export default class Cl_vConcurso extends Cl_vGeneral {
         super({ formName: "aspirantes" });
         this.divAspirantes = this.crearHTMLElement("divAspirantes");
         this.btAgregar = this.crearHTMLButtonElement("btAgg", {
-            onclick: () => this.controlador?.mostrarVista("form")
+            onclick: () => this.controlador?.mostrarVista("registro")
         });
     }
     refrescarTabla() {
         if (!this.controlador)
             return;
+        // 1. Limpiamos la tabla
         this.divAspirantes.innerHTML = "";
-        let aspirantes = this.controlador.aspirantes;
-        aspirantes.forEach((asp, index) => {
-            let fila = `
+        const aspirantes = this.controlador.aspirantes;
+        // 2. Construimos TODO el HTML en una variable primero
+        let htmlTabla = "";
+        aspirantes.forEach((asp) => {
+            htmlTabla += `
             <tr>
                 <td>${asp.nombre}</td>
                 <td>${asp.cedula}</td>
-                <td>${asp.notaFormato5()}</td>
-                <td>${asp.notaFormato51()}</td>
+                <td>${asp.notaFormato5().toFixed(2)} pts</td>
+                <td>${asp.notaFormato51().toFixed(2)} pts</td>
                 <td>
-                    <button id="aspirantes_btEditar_${index}" title="Editar F5">F5</button>
-                    <button id="aspirantes_btEliminar_${index}" title="Eliminar" style="color:red;">X</button>
+                    <button class="btF5" data-ced="${asp.cedula}" style="cursor:pointer; background:#2563eb; color:white; border:none; padding:5px 10px; border-radius:5px;">F5</button>
+                    <button class="btF51" data-ced="${asp.cedula}" style="cursor:pointer; background:#4f46e5; color:white; border:none; padding:5px 10px; border-radius:5px;">F5.1</button>
+                    <button class="btDel" data-ced="${asp.cedula}" style="cursor:pointer; background:transparent; color:red; border:1px solid red; padding:5px 10px; border-radius:5px;">X</button>
                 </td>
             </tr>`;
-            this.divAspirantes.innerHTML += fila;
         });
-        aspirantes.forEach((asp, index) => {
-            let btEditar = document.getElementById(`aspirantes_btEditar_${index}`);
-            let btEliminar = document.getElementById(`aspirantes_btEliminar_${index}`);
-            if (btEditar)
-                btEditar.onclick = () => this.controlador?.editarAspirante(asp.cedula);
-            if (btEliminar)
-                btEliminar.onclick = () => this.controlador?.eliminarAspirante(asp.cedula);
+        // 3. Asignamos el HTML al DOM una sola vez
+        this.divAspirantes.innerHTML = htmlTabla;
+        // 4. Asignamos los eventos a los botones recién creados
+        this.asignarEventos();
+    }
+    asignarEventos() {
+        // Botones F5
+        this.divAspirantes.querySelectorAll(".btF5").forEach((btn) => {
+            btn.onclick = () => {
+                const ced = btn.dataset.ced;
+                if (ced)
+                    this.controlador?.editarF5(ced);
+            };
+        });
+        // Botones F5.1
+        this.divAspirantes.querySelectorAll(".btF51").forEach((btn) => {
+            btn.onclick = () => {
+                const ced = btn.dataset.ced;
+                if (ced)
+                    this.controlador?.editarF51(ced);
+            };
+        });
+        // Botones Eliminar
+        this.divAspirantes.querySelectorAll(".btDel").forEach((btn) => {
+            btn.onclick = () => {
+                const ced = btn.dataset.ced;
+                if (ced)
+                    this.controlador?.eliminarAspirante(ced);
+            };
         });
     }
     mostrar() {
         this.vista.hidden = false;
-        this.refrescarTabla();
+        // Opcional: Refrescar al mostrar para asegurar datos actualizados
+        // this.refrescarTabla(); 
     }
     ocultar() {
         this.vista.hidden = true;

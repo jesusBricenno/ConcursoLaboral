@@ -1,7 +1,5 @@
 import Cl_vGeneral from "./tools/Cl_vGeneral.js";
 export default class Cl_vAspirante extends Cl_vGeneral {
-    inNombre;
-    inCedula;
     inNota51;
     inNota52;
     inNota53;
@@ -17,8 +15,6 @@ export default class Cl_vAspirante extends Cl_vGeneral {
     btCancelar;
     constructor() {
         super({ formName: "formCO5" });
-        this.inNombre = this.crearHTMLInputElement("inNombre");
-        this.inCedula = this.crearHTMLInputElement("inCedula");
         this.inNota51 = this.crearHTMLInputElement("inNota51");
         this.inNota52 = this.crearHTMLInputElement("inNota52");
         this.inNota53 = this.crearHTMLInputElement("inNota53");

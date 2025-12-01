@@ -7,7 +7,7 @@
     <title>Concurso Laboral</title>
 </head>
 <body>
-    <h2>Concurso Laboral</h2>
+    <h2 class="titleProyecto">Concurso Laboral</h2>
     
     <section id="aspirantes">
         <h3>Aspirantes</h3>
@@ -16,6 +16,10 @@
                 <thead>
                     <tr>
                         <th style="width:150px">Nombre</th>
+                        <th style="width:100px">Cédula</th>
+                        <th>Nota F5</th>
+                        <th>Nota F5.1</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="aspirantes_divAspirantes"></tbody>
@@ -24,30 +28,38 @@
         <button id="aspirantes_btAgg" style="font-size: 1.2rem;">&#43;</button> 
     </section>
 
+    <section id="registroAspirante" hidden>
+        <h3>Nuevo Aspirante</h3>
+        <label>Cédula: <input id="registroAspirante_inCedula" type="text" placeholder="Ej. V-12345678"></label><br>
+        <label>Nombre: <input id="registroAspirante_inNombre" type="text" placeholder="Ej. Juan Pérez"></label><br>
+        <button id="registroAspirante_btVolver">Volver</button>
+    </section>
+
     <section id="formCO5" hidden>
-        <h3>Ficha F5</h3>
-        <label>Nombre: <input id="formCO5_inNombre" type="text" placeholder="Nombre"></label><br>
-        <label>Cédula: <input id="formCO5_inCedula" type="text" placeholder="Cédula"></label><br>
+        <h4>Evaluación F5 (Postgrado/Cursos)</h4>
+        <input id="formCO5_inCedulaHidden" type="hidden"> 
         
-        <h4>Evaluación F5</h4>
         <label>Nota 5.1: <input id="formCO5_inNota51" type="number"></label><br>
         <label>Nota 5.2: <input id="formCO5_inNota52" type="number"></label><br>
         <label>Nota 5.3: <input id="formCO5_inNota53" type="number"></label><br>
         <label>Nota 5.4: <input id="formCO5_inNota54" type="number"></label><br>
 
-        <h4>Detalles F5.1</h4>
-        <label>Nota 5.1.1: <input id="formCO5_inNota511" type="number"></label><br>
-        <label>Nota 5.1.2: <input id="formCO5_inNota512" type="number"></label><br>
-        <label>Nota 5.1.3: <input id="formCO5_inNota513" type="number"></label><br>
-        <label>Nota 5.1.4: <input id="formCO5_inNota514" type="number"></label><br>
-        <label>Nota 5.1.5: <input id="formCO5_inNota515" type="number"></label><br>
-        <label>Nota 5.1.6: <input id="formCO5_inNota516" type="number"></label><br>
-        <label>Nota 5.1.7: <input id="formCO5_inNota517" type="number"></label><br>
+        <button id="formCO5_btVolver">Volver</button>
+    </section>
 
-        <div style="margin-top: 15px;">
-            <button id="formCO5_btAceptar">&#10003;</button>
-            <button id="formCO5_btCancelar" class="delete">&#10005;</button>
-        </div>
+    <section id="formCO51" hidden>
+        <h4>Evaluación F5.1 (Pregrado/Méritos)</h4>
+        <input id="formCO51_inCedulaHidden" type="hidden">
+
+        <label>Nota 5.1.1: <input id="formCO51_inNota511" type="number"></label><br>
+        <label>Nota 5.1.2: <input id="formCO51_inNota512" type="number"></label><br>
+        <label>Nota 5.1.3: <input id="formCO51_inNota513" type="number"></label><br>
+        <label>Nota 5.1.4: <input id="formCO51_inNota514" type="number"></label><br>
+        <label>Nota 5.1.5: <input id="formCO51_inNota515" type="number"></label><br>
+        <label>Nota 5.1.6: <input id="formCO51_inNota516" type="number"></label><br>
+        <label>Nota 5.1.7: <input id="formCO51_inNota517" type="number"></label><br>
+
+        <button id="formCO51_btVolver">Volver</button>
     </section>
 
     <script type="module">

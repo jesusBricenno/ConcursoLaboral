@@ -34,6 +34,10 @@ body > *{
   max-width:var(--max-width);
 }
 
+.titleProyecto {
+  text-align: center;
+}
+
 h2{
   margin:0 0 18px 0;
   font-size:1.5rem;
@@ -177,6 +181,7 @@ input[type="number"]{ max-width:160px }
 #aspirantes_divAspirantes tr{ border-bottom:1px solid rgba(16,24,40,0.03); }
 #aspirantes_divAspirantes td{ padding:10px 6px; }
 #aspirantes_divAspirantes button, .aspirante-row button{ margin-left:8px; padding:6px 9px; }
+#aspirantes_divAspirantes{ display: table-row-group; }
 
 .row{ display:flex; gap:12px; align-items:center; }
 .col{ display:flex; flex-direction:column; gap:8px; }
