@@ -12,10 +12,8 @@ export default class Cl_vConcurso extends Cl_vGeneral {
     refrescarTabla() {
         if (!this.controlador)
             return;
-        // 1. Limpiamos la tabla
         this.divAspirantes.innerHTML = "";
         const aspirantes = this.controlador.aspirantes;
-        // 2. Construimos TODO el HTML en una variable primero
         let htmlTabla = "";
         aspirantes.forEach((asp) => {
             htmlTabla += `
@@ -31,9 +29,7 @@ export default class Cl_vConcurso extends Cl_vGeneral {
                 </td>
             </tr>`;
         });
-        // 3. Asignamos el HTML al DOM una sola vez
         this.divAspirantes.innerHTML = htmlTabla;
-        // 4. Asignamos los eventos a los botones recién creados
         this.asignarEventos();
     }
     asignarEventos() {
@@ -64,8 +60,7 @@ export default class Cl_vConcurso extends Cl_vGeneral {
     }
     mostrar() {
         this.vista.hidden = false;
-        // Opcional: Refrescar al mostrar para asegurar datos actualizados
-        // this.refrescarTabla(); 
+        this.refrescarTabla();
     }
     ocultar() {
         this.vista.hidden = true;

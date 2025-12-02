@@ -1,6 +1,5 @@
 import Cl_vGeneral from "./tools/Cl_vGeneral.js";
 export default class ClvFormCO51 extends Cl_vGeneral {
-    // public controlador: Cl_controlador | null = null;
     inCedulaHidden;
     inNota511;
     inNota512;

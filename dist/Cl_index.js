@@ -12,12 +12,10 @@ export default class Cl_index {
         let vFormCO5 = new Cl_vFormCO5();
         let vFormCO51 = new ClvFormCO51();
         let controlador = new Cl_controlador(modelo, vConcurso, vRegistro, vFormCO5, vFormCO51);
-        // Inyectamos el controlador en todas las vistas
         vConcurso.controlador = controlador;
         vRegistro.controlador = controlador;
         vFormCO5.controlador = controlador;
         vFormCO51.controlador = controlador;
-        // Iniciamos en la lista
         controlador.mostrarVista("aspirantes");
     }
 }
