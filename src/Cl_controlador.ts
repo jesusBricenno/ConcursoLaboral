@@ -53,7 +53,22 @@ export default class Cl_controlador {
             this.mostrarVista("formCO51");
         }
     }
-
+    //-------------------Por implementar-------------------------------
+    public editarF52(cedula: string) {
+        const aspirante = this.modelo.getAspirante(cedula);
+        if (aspirante) {
+            this./*vista del fo52*/.cargarDatos(aspirante);
+            this.mostrarVista("formCO52");
+        }
+    }
+    public editarF53(cedula: string) {
+        const aspirante = this.modelo.getAspirante(cedula);
+        if (aspirante) {
+            this./*vista del fo53*/.cargarDatos(aspirante);
+            this.mostrarVista("formCO53");
+        }
+    }
+    //-----------------------------------------------------------------
     public mostrarVista(vista: "aspirantes" | "registro" | "formCO5" | "formCO51") {
         this.vConcurso.ocultar();
         this.vRegistro.ocultar();
