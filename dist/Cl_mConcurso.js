@@ -1,11 +1,30 @@
 import Cl_mAspirante from "./Cl_mAspirante.js";
 export default class Cl_mConcurso {
     aspirantes = [];
-    constructor() { }
+    STORAGE_KEY = "concurso_laboral_data";
+    constructor() {
+        this.cargar();
+    }
+    cargar() {
+        const data = localStorage.getItem(this.STORAGE_KEY);
+        if (data) {
+            try {
+                const json = JSON.parse(data);
+                this.aspirantes = json.map((d) => new Cl_mAspirante(d));
+            }
+            catch (error) {
+                console.error("Error al cargar datos del almacenamiento local:", error);
+                this.aspirantes = [];
+            }
+        }
+    }
+    guardar() {
+        const data = this.aspirantes.map(asp => asp.toJSON());
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
+    }
     procesarAspirante(datos) {
         let existe = this.aspirantes.find(a => a.cedula === datos.cedula);
         if (existe) {
-            // Actualización PARCIAL: Solo actualiza si el dato viene en 'datos'
             if (datos.nombre)
                 existe.nombre = datos.nombre;
             // Notas F5
@@ -70,15 +89,16 @@ export default class Cl_mConcurso {
                 existe.nota538 = datos.nota538;
         }
         else {
-            // Creación nueva (datos debe estar completo o inicializado)
             this.aspirantes.push(new Cl_mAspirante(datos));
         }
+        this.guardar();
         return true;
     }
     eliminarAspirante(cedula) {
         let index = this.aspirantes.findIndex(a => a.cedula === cedula);
         if (index !== -1) {
             this.aspirantes.splice(index, 1);
+            this.guardar();
             return true;
         }
         return false;

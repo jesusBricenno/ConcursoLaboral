@@ -18,7 +18,7 @@ export default class Cl_vConcurso extends Cl_vGeneral {
         let htmlTabla = "";
 
         const aspirantes = this.controlador.aspirantes;
-        
+
         aspirantes.forEach((asp: any) => {
             htmlTabla += `
             <tr>
