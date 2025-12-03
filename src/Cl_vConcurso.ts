@@ -15,30 +15,30 @@ export default class Cl_vConcurso extends Cl_vGeneral {
 
     public refrescarTabla() {
         if (!this.controlador) return;
-        
-        this.divAspirantes.innerHTML = "";
-        
+        let htmlTabla = "";
+
         const aspirantes = this.controlador.aspirantes;
         
-        let htmlTabla = "";
-        
-        aspirantes.forEach((asp) => {
+        aspirantes.forEach((asp: any) => {
             htmlTabla += `
             <tr>
                 <td>${asp.nombre}</td>
                 <td>${asp.cedula}</td>
-                <td>${asp.notaFormato5().toFixed(2)} pts</td>
-                <td>${asp.notaFormato51().toFixed(2)} pts</td>
+                <td>${asp.notaFormato5().toFixed(2)}</td>
+                <td>${asp.notaFormato51().toFixed(2)}</td>
+                <td>${asp.notaFormato52().toFixed(2)}</td>
+                <td>${asp.notaFormato53().toFixed(2)}</td>
                 <td>
-                    <button class="btF5" data-ced="${asp.cedula}" style="cursor:pointer; background:#2563eb; color:white; border:none; padding:5px 10px; border-radius:5px;">F5</button>
-                    <button class="btF51" data-ced="${asp.cedula}" style="cursor:pointer; background:#4f46e5; color:white; border:none; padding:5px 10px; border-radius:5px;">F5.1</button>
-                    <button class="btDel" data-ced="${asp.cedula}" style="cursor:pointer; background:transparent; color:red; border:1px solid red; padding:5px 10px; border-radius:5px;">X</button>
+                    <button class="btF5" data-ced="${asp.cedula}" title="F5 Postgrado" style="padding:4px;">F5</button>
+                    <button class="btF51" data-ced="${asp.cedula}" title="F5.1 Pregrado" style="padding:4px;">F5.1</button>
+                    <button class="btF52" data-ced="${asp.cedula}" title="F5.2 Prod. Científica" style="padding:4px;">F5.2</button>
+                    <button class="btF53" data-ced="${asp.cedula}" title="F5.3 Méritos" style="padding:4px;">F5.3</button>
+                    <button class="btDel" data-ced="${asp.cedula}" title="Eliminar" style="color:red; background:none; border:1px solid red; padding:4px;">X</button>
                 </td>
             </tr>`;
         });
-
+        
         this.divAspirantes.innerHTML = htmlTabla;
-
         this.asignarEventos();
     }
 
@@ -56,6 +56,21 @@ export default class Cl_vConcurso extends Cl_vGeneral {
             (btn as HTMLElement).onclick = () => {
                 const ced = (btn as HTMLElement).dataset.ced;
                 if(ced) this.controlador?.editarF51(ced);
+            };
+        });
+
+        this.divAspirantes.querySelectorAll(".btF52").forEach((btn) => {
+            (btn as HTMLElement).onclick = () => {
+                const ced = (btn as HTMLElement).dataset.ced;
+                if(ced) this.controlador?.editarF52(ced);
+            };
+        });
+
+        // Nuevos eventos F5.3
+        this.divAspirantes.querySelectorAll(".btF53").forEach((btn) => {
+            (btn as HTMLElement).onclick = () => {
+                const ced = (btn as HTMLElement).dataset.ced;
+                if(ced) this.controlador?.editarF53(ced);
             };
         });
 

@@ -32,6 +32,42 @@ export default class Cl_mConcurso {
                 existe.nota516 = datos.nota516;
             if (datos.nota517 !== undefined)
                 existe.nota517 = datos.nota517;
+            // Notas F5.2
+            if (datos.nota521 !== undefined)
+                existe.nota521 = datos.nota521;
+            if (datos.nota522 !== undefined)
+                existe.nota522 = datos.nota522;
+            if (datos.nota523 !== undefined)
+                existe.nota523 = datos.nota523;
+            if (datos.nota524 !== undefined)
+                existe.nota524 = datos.nota524;
+            if (datos.nota525 !== undefined)
+                existe.nota525 = datos.nota525;
+            if (datos.nota526 !== undefined)
+                existe.nota526 = datos.nota526;
+            if (datos.nota527 !== undefined)
+                existe.nota527 = datos.nota527;
+            if (datos.nota528 !== undefined)
+                existe.nota528 = datos.nota528;
+            if (datos.nota529 !== undefined)
+                existe.nota529 = datos.nota529;
+            // Notas F5.3
+            if (datos.nota531 !== undefined)
+                existe.nota531 = datos.nota531;
+            if (datos.nota532 !== undefined)
+                existe.nota532 = datos.nota532;
+            if (datos.nota533 !== undefined)
+                existe.nota533 = datos.nota533;
+            if (datos.nota534 !== undefined)
+                existe.nota534 = datos.nota534;
+            if (datos.nota535 !== undefined)
+                existe.nota535 = datos.nota535;
+            if (datos.nota536 !== undefined)
+                existe.nota536 = datos.nota536;
+            if (datos.nota537 !== undefined)
+                existe.nota537 = datos.nota537;
+            if (datos.nota538 !== undefined)
+                existe.nota538 = datos.nota538;
         }
         else {
             // Creación nueva (datos debe estar completo o inicializado)

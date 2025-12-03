@@ -241,7 +241,7 @@ export default class Cl_mAspirante{
         this._nota524 = nt524 > 0 && nt524 <= 6 ? nt524 : 0;
     }
     get nota524(): number {
-        return this._nota514;
+        return this._nota524;
     }
     set nota525(nt525: number){
         this._nota525 = nt525 > 0 && nt525 <= 4 ? nt525 : 0;
@@ -250,7 +250,7 @@ export default class Cl_mAspirante{
         return this._nota525;
     }
     set nota526(nt526: number){
-        this._nota516 = nt526 > 0 && nt526 <= 3 ? nt526 : 0;
+        this._nota526 = nt526 > 0 && nt526 <= 3 ? nt526 : 0;
     }
     get nota526(): number {
         return this._nota526;
@@ -268,7 +268,7 @@ export default class Cl_mAspirante{
         return this._nota528;
     }
     set nota529(nt529: number){
-        this._nota517 = nt529 > 0 && nt529 <= 15 ? nt529 : 0;
+        this._nota529 = nt529 > 0 && nt529 <= 15 ? nt529 : 0;
     }
     get nota529(): number {
         return this._nota529;
@@ -323,7 +323,6 @@ export default class Cl_mAspirante{
     get nota538(): number {
         return this._nota538;
     }
-    //...
 
     notaFormato5(){
         const sumaTotal5 = this.nota51 + this.nota52 + this.nota53 + this.nota54;
@@ -408,9 +407,6 @@ export default class Cl_mAspirante{
                 nota536: this.nota536,
                 nota537: this.nota537,
                 nota538: this.nota538,
-
-
-            
             };
         }
 
