@@ -3,8 +3,8 @@ import Cl_vConcurso from "./Cl_vConcurso.js";
 import Cl_vRegistroAspirante from "./Cl_vRegistroAspirante.js";
 import Cl_vFormCO5 from "./Cl_vFormCO5.js";
 import ClvFormCO51 from "./Cl_vFormCO51.js";
-import Cl_vFormCO52 from "./Cl_vFormCO52.js"; // Nuevo
-import Cl_vFormCO53 from "./Cl_vFormCO53.js"; // Nuevo
+import Cl_vFormCO52 from "./Cl_vFormCO52.js";
+import Cl_vFormCO53 from "./Cl_vFormCO53.js";
 import { iAspirante } from "./Cl_mAspirante.js";
 
 export default class Cl_controlador {
@@ -13,8 +13,8 @@ export default class Cl_controlador {
     private vRegistro: Cl_vRegistroAspirante;
     private vFormCO5: Cl_vFormCO5;
     private vFormCO51: ClvFormCO51;
-    private vFormCO52: Cl_vFormCO52; // Nuevo
-    private vFormCO53: Cl_vFormCO53; // Nuevo
+    private vFormCO52: Cl_vFormCO52;
+    private vFormCO53: Cl_vFormCO53;
 
     constructor(
         modelo: Cl_mConcurso, 
@@ -22,8 +22,8 @@ export default class Cl_controlador {
         vRegistro: Cl_vRegistroAspirante,
         vFormCO5: Cl_vFormCO5,
         vFormCO51: ClvFormCO51,
-        vFormCO52: Cl_vFormCO52, // Nuevo
-        vFormCO53: Cl_vFormCO53  // Nuevo
+        vFormCO52: Cl_vFormCO52,
+        vFormCO53: Cl_vFormCO53
     ) {
         this.modelo = modelo;
         this.vConcurso = vConcurso;
@@ -80,12 +80,12 @@ export default class Cl_controlador {
         this.vRegistro.ocultar();
         this.vFormCO5.ocultar();
         this.vFormCO51.ocultar();
-        this.vFormCO52.ocultar(); // Nuevo
-        this.vFormCO53.ocultar(); // Nuevo
+        this.vFormCO52.ocultar();
+        this.vFormCO53.ocultar();
 
         if (vista === "aspirantes") {
             this.vConcurso.mostrar();
-            this.vConcurso.refrescarTabla(); // Refrescar para ver nuevos totales
+            this.vConcurso.refrescarTabla();
         } else if (vista === "registro") {
             this.vRegistro.mostrar();
         } else if (vista === "formCO5") {

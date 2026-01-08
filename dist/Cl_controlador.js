@@ -4,11 +4,9 @@ export default class Cl_controlador {
     vRegistro;
     vFormCO5;
     vFormCO51;
-    vFormCO52; // Nuevo
-    vFormCO53; // Nuevo
-    constructor(modelo, vConcurso, vRegistro, vFormCO5, vFormCO51, vFormCO52, // Nuevo
-    vFormCO53 // Nuevo
-    ) {
+    vFormCO52;
+    vFormCO53;
+    constructor(modelo, vConcurso, vRegistro, vFormCO5, vFormCO51, vFormCO52, vFormCO53) {
         this.modelo = modelo;
         this.vConcurso = vConcurso;
         this.vRegistro = vRegistro;
@@ -60,11 +58,11 @@ export default class Cl_controlador {
         this.vRegistro.ocultar();
         this.vFormCO5.ocultar();
         this.vFormCO51.ocultar();
-        this.vFormCO52.ocultar(); // Nuevo
-        this.vFormCO53.ocultar(); // Nuevo
+        this.vFormCO52.ocultar();
+        this.vFormCO53.ocultar();
         if (vista === "aspirantes") {
             this.vConcurso.mostrar();
-            this.vConcurso.refrescarTabla(); // Refrescar para ver nuevos totales
+            this.vConcurso.refrescarTabla();
         }
         else if (vista === "registro") {
             this.vRegistro.mostrar();
